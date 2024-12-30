@@ -41,7 +41,7 @@ const UserMyCourses = () => {
                                       <div
                                         key={index}
                                         className="w-[300px] h-[300px] text-center border-[1px] border-slate-500 rounded-xl flex flex-col gap-4 cursor-pointer hover:opacity-70 duration-150"
-                                        onClick={()=> navigate(`/home/courses/${item._id}`)}
+                                        onClick={()=> navigate(`/home/courses/${item.courseId}`)}
                                       >
                                         <div className="w-full h-[150px]">
                                           <img

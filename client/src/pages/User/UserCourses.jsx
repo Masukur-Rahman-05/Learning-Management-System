@@ -31,7 +31,9 @@ const createSearchParamsHelper = (filterParams) => {
     }
   }
 
-  return queryParams.join("&");
+   return queryParams.join("&");
+
+ 
 };
 
 const UserCourses = () => {
@@ -90,15 +92,11 @@ const UserCourses = () => {
   };
 
 
-
-
   useEffect(() => {
     setFilter(JSON.parse(sessionStorage.getItem("filter")) || {});
   }, []);
 
-   
-
-  
+     
   //.............................................Setting Search Params.........................................
   useEffect(() => {
     if (filter && Object.keys(filter).length > 0) {
