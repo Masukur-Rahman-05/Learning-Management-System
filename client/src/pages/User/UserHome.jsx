@@ -12,10 +12,13 @@ import { HiArrowLongRight } from "react-icons/hi2";
 import HomeCategory from './HomeUtils.js/HomeCategory.jsx';
 import HomeInstructor from './HomeUtils.js/HomeInstructors.jsx';
 import { contents } from './HomeUtils.js/HomeElements.js';
+import { useNavigate } from 'react-router-dom';
 
 const UserHome = () => {
   const banners = [bannerOne, bannerTwo, bannerThree, bannerFour];
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -31,7 +34,7 @@ const UserHome = () => {
         <div className="absolute w-36 h-36 rounded-full bg-yellow-700 top-[100px] left-[200px] blur-3xl "></div>
         <div className="absolute w-32 h-32 rounded-full bg-violet-600 bottom-24 right-32 blur-3xl "></div>
         <h1 className="text-5xl font-bold tracking-wide leading-relaxed text-white">
-          Unleash Your Potential with Expert-Led Courses
+          Unleash Your Potential
         </h1>
         <p className="text-white text-md w-[60%]  overflow-hidden">
           At E-learning, we are committed to empowering learners worldwide with
@@ -56,7 +59,7 @@ const UserHome = () => {
           with E-learning and unlock endless possibilities!
         </p>
 
-        <Button className="flex items-center gap-2 w-1/6 text-lg p-8 bg-violet-950 ">
+        <Button className="flex items-center gap-2 w-1/6 text-lg p-8 bg-violet-950 " onClick = {() => navigate("/home/courses")}>
           EXPLORE COURSES <HiArrowLongRight />{" "}
         </Button>
       </div>

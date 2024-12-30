@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllPaidCourses } from '@/Redux/user/UserPaidCourseSlice.js';
+import { useNavigate } from 'react-router-dom';
 
 const UserMyCourses = () => {
+
+  const navigate = useNavigate()
 
     const { userPaidCourseData, isLoading } = useSelector(
       (state) => state.userPaidCourseSlice
@@ -31,13 +34,14 @@ const UserMyCourses = () => {
             <div className='w-full h-full flex flex-col items-center'>
                 {
                     userPaidCourseData.length > 0 ? (
-                        <div className='w-full h-full  flex flex-wrap justify-center gap-5'>
+                        <div className='w-full h-full  flex flex-wrap justify-center gap-5 '>
                             {
                                 userPaidCourseData.map((item, index) => {
                                     return (
                                       <div
                                         key={index}
-                                        className="w-[300px] h-[300px] text-center border-[1px] border-slate-500 rounded-xl flex flex-col gap-4 cursor-pointer"
+                                        className="w-[300px] h-[300px] text-center border-[1px] border-slate-500 rounded-xl flex flex-col gap-4 cursor-pointer hover:opacity-70 duration-150"
+                                        onClick={()=> navigate(`/home/courses/${item._id}`)}
                                       >
                                         <div className="w-full h-[150px]">
                                           <img

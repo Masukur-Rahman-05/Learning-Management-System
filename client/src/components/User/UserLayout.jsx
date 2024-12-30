@@ -15,7 +15,7 @@ const UserLayout = () => {
     return (
       <div className="w-screen min-h-screen flex flex-col bg-slate-950">
         <div className="bg-none w-full h-[80px] p-5  flex items-center justify-between">
-          <div className="flex items-center gap-2 font-extrabold text-2xl text-violet-400">
+          <div className="flex items-center gap-2 font-extrabold text-2xl text-violet-400 cursor-pointer" onClick = {() => navigate("/home")}>
             <BsBookHalf />
             <h1>E-Learning</h1>
           </div>

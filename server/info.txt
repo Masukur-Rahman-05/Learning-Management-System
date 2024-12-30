@@ -1,5 +1,0 @@
-
-username: masukrahoman5
-password: masukrahoman6
-MONGO_URL: mongodb+srv://masukrahoman5:masukrahoman6@lmscluster.vuxmp.mongodb.net/
-MONGO_DRIVER: mongodb+srv://masukrahoman5:masukrahoman6@lmscluster.vuxmp.mongodb.net/?retryWrites=true&w=majority&appName=lmsCluster
