@@ -43,13 +43,14 @@ const UserCourses = () => {
   const [sort, setSort] = useState("lowtohigh");
   const [searchParams, setSearchParams] = useSearchParams();
 
-  useEffect(() => {
-    dispatch(getAllCourses());
-  }, [dispatch]);
+
 
   useEffect(() => {
     if (Object.keys(filter).length > 0) {
       dispatch(getAllCourses({ filter: filter }));
+    }
+    else {
+      dispatch(getAllCourses({filter:{}}));
     }
   }, [dispatch, filter]);
 
@@ -88,9 +89,16 @@ const UserCourses = () => {
     console.log(filter);
   };
 
+
+
+
   useEffect(() => {
     setFilter(JSON.parse(sessionStorage.getItem("filter")) || {});
   }, []);
+
+   
+
+  
   //.............................................Setting Search Params.........................................
   useEffect(() => {
     if (filter && Object.keys(filter).length > 0) {
@@ -200,3 +208,9 @@ const UserCourses = () => {
 };
 
 export default UserCourses;
+
+
+
+
+
+

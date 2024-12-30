@@ -6,6 +6,7 @@ import { StudentCourses } from "../../model/user/StudentCourses.js";
 export const getAllCourses = async (req, res) => {
 
     const { category = [], language = [], level = [] } = req.query;
+
     
     let filter = {}
 
@@ -18,6 +19,9 @@ export const getAllCourses = async (req, res) => {
      if (typeof level === "string" && level.length > 0) {
        filter.level = { $in: level.split(",") };
      }
+
+    
+
 
     try {
 
