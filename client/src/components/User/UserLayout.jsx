@@ -22,7 +22,9 @@ const UserLayout = () => {
   };
 
   return (
-    <div className="w-screen min-h-screen flex flex-col bg-slate-950">
+    <div
+      className="w-screen min-h-screen flex flex-col bg-slate-950"
+    >
       <div className="bg-none w-full h-[80px] p-5 flex items-center justify-between">
         <div
           className="flex items-center gap-2 font-extrabold sm:text-lg md:text-xl lg:text-2xl text-violet-400 cursor-pointer"
@@ -67,7 +69,7 @@ const UserLayout = () => {
 
           {/* Dropdown Menu: Visible on small/medium screens */}
           <div className="block lg:hidden ">
-            <DropdownMenu className='w-[100px]'>
+            <DropdownMenu className="w-[100px]">
               <DropdownMenuTrigger asChild>
                 <Button>
                   <CiMenuFries />
@@ -87,9 +89,7 @@ const UserLayout = () => {
                   My-Courses
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={handleLogout}>
-                  <Button
-                    className="bg-violet-800 w-[70px] h-[30px]"
-                  >
+                  <Button className="bg-violet-800 w-[70px] h-[30px]">
                     Logout
                   </Button>
                 </DropdownMenuItem>

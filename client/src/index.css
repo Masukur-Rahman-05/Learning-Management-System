@@ -68,12 +68,12 @@
 
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 5px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #441156;
+    background: 343434;
     border-radius: 5px;
 }
 

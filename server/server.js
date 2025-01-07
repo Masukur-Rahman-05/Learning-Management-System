@@ -18,6 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
     origin: "http://localhost:5173",
+    // origin: "https://ace4-2404-1c40-166-390-5c70-291e-d8d4-d3f3.ngrok-free.app",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true, // Allow cookies and auth tokens
     allowedHeaders: "Content-Type,Authorization,Cache-Control",
