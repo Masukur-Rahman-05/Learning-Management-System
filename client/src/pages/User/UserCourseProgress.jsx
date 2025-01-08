@@ -170,18 +170,18 @@ const UserCourseProgress = () => {
     <div className="w-screen min-h-screen flex flex-col gap-5  text-white">
       {isCourseCompleted && (
         <div className="fixed inset-0 bg-black/80 z-50 flex flex-col items-center justify-center">
-          <h2 className="text-4xl font-bold text-green-500 mb-4">
+          <h2 className="text-[24px] lg:text-4xl font-bold text-green-500 mb-4 text-wrap text-center px-5">
             Congratulations! Course Completed!
           </h2>
-          <p className="text-xl mb-6">
+          <p className="text-[16px] lg:text-xl mb-6">
             You've watched all videos in this course.
           </p>
           <div className="flex space-x-4">
             <button
               onClick={handleResetCourse}
-              className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+              className="px-4 lg:px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
             >
-              Restart Course
+              Restart Now
             </button>
             <button
               onClick={() => {
@@ -189,7 +189,7 @@ const UserCourseProgress = () => {
                 setCurrentVideoIndex(0);
                 setIsCourseCompleted(false);
               }}
-              className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+              className="px-4 lg:px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
             >
               Watch Again
             </button>
@@ -197,22 +197,22 @@ const UserCourseProgress = () => {
         </div>
       )}
 
-      <div className="flex p-10 gap-8 justify-between">
-        <div className="w-1/2 h-[400px] pl-8">
+      <div className="flex flex-col lg:flex-row p-10 gap-8 justify-between items-center">
+        <div className="w-full xl:w-1/2 h-[400px] md:px-10 lg:pl-8">
           <VideoPlayer
             key={lectureVideo?._id}
             url={lectureVideo?.videoUrl}
-            width={"90%"}
+            width={"100%"}
             height={"100%"}
             setVideoProgress={setVideoProgress}
           />
           <p className="text-xl">{lectureVideo?.title}</p>
         </div>
-        <div className="w-1/2 pl-20 my-5">
-          <h1 className="text-3xl font-bold text-green-500">
+        <div className="w-full xl:w-1/2 lg:pl-20 my-5">
+          <h1 className="text-xl lg:text-3xl font-bold text-green-500 mt-16 lg:mt-0">
             Course Curriculum
           </h1>
-          <div className="my-5 ml-6">
+          <div className="my-5 lg:ml-6">
             {courseDetails.curriculum.map((item, index) => {
               const isViewed = courseProgress.some(
                 (progress) => progress.lectureId === item._id
@@ -234,7 +234,7 @@ const UserCourseProgress = () => {
                 <div
                   key={index}
                   onClick={() => isSelectable && handleSelectVideo(item, index)}
-                  className={`my-5 border-[1px] rounded-xl p-5 ${
+                  className={`my-5 border-[1px] rounded-xl p-3 lg:p-5 ${
                     isSelectable
                       ? "cursor-pointer hover:bg-slate-800"
                       : "opacity-50 cursor-not-allowed"
@@ -244,7 +244,7 @@ const UserCourseProgress = () => {
                       : "border-slate-500"
                   }`}
                 >
-                  <p className="text-lg font-semibold text-slate-400">
+                  <p className="text-sm lg:text-lg font-semibold text-slate-400">
                     {item.title}
                     {isViewed && !isCourseCompleted && (
                       <span className="ml-2 text-green-500">(Completed)</span>
