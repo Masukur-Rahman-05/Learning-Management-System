@@ -25,7 +25,7 @@ const UserMyCourses = () => {
     return (
       <div className="w-screen min-h-screen flex flex-col gap-5  text-white p-5">
         <div className=" w-[90%] h-16 mx-auto border-slate-500 border-[1px] rounded-xl flex items-center justify-center">
-          <h1 className=" text-2xl font-bold ">
+          <h1 className="text-base lg:text-2xl font-bold text-center">
             THE COURSES YOU HAVE ENROLLED
           </h1>
             </div>

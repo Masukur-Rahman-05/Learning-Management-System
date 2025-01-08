@@ -222,7 +222,7 @@ const UserHome = () => {
         <h1 className="text-3xl md:text-5xl font-bold tracking-wide leading-relaxed text-white text-center">
           Unleash Your Potential
         </h1>
-        <p className="text-white sm:text-sm md:text-md lg:text-lg w-[90%] md:w-[60%] text-justify z-30">
+        <p className="text-white text-sm md:text-md lg:text-lg w-[90%] md:w-[60%] text-justify z-30">
           At E-learning, we are committed to empowering learners worldwide with
           high-quality, expert-led courses tailored to help you achieve your
           personal and professional goals. Whether you're a beginner exploring a
