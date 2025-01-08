@@ -247,7 +247,7 @@ const UserHome = () => {
       </div>
 
       {/* Info Cards */}
-      <div className="w-full flex flex-wrap justify-center gap-5 md:gap-10 my-32 px-5">
+      <div className="w-full flex flex-wrap justify-center gap-5 md:gap-10 my-10 px-5">
         <div className="w-72 md:w-[300px] h-auto p-5 flex flex-col items-center text-justify rounded-xl shadow-xl space-y-3 bg-slate-900 hover:scale-110 duration-700">
           <h1 className="sm:text-lg lg:text-xl font-bold text-violet-500">Learn</h1>
           <p className="text-white text-sm lg:text-base">
@@ -282,7 +282,7 @@ const UserHome = () => {
       </div>
 
       {/* Carousel */}
-      <div className="relative flex justify-center items-center my-10">
+      <div className="relative flex justify-center items-center mt-10">
         <div className="relative w-full md:w-1/2 h-[200px] md:h-[400px] overflow-hidden rounded-2xl">
           {banners.map((banner, index) => (
             <img
