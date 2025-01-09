@@ -67,7 +67,7 @@ const CourseThumbnail = ({ setThumbnailData,initialData }) => {
   };
   return (
     <div className="flex flex-col gap-5">
-      <div className="text-xl font-bold mt-5">
+      <div className="text-lg lg:text-2xl font-bold mt-5">
         Upload Course thumbnail Image
       </div>
       {uploadProgress > 0 && (

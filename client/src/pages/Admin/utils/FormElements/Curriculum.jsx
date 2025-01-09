@@ -177,8 +177,8 @@ const Curriculum = ({ setCurriculumData, initialData }) => {
   return (
     <div className="flex flex-col gap-5">
       <div className="space-y-4">
-        <h1 className="text-2xl font-bold">Create course curriculum</h1>
-        <div className="flex items-center justify-between">
+        <h1 className="text-lg lg:text-2xl font-bold">Create course curriculum</h1>
+        <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-3">
           <Button
             disabled={!isAddButtonDisable() || isLoading}
             onClick={handleAddLecture}
@@ -207,13 +207,13 @@ const Curriculum = ({ setCurriculumData, initialData }) => {
         {courseCurriculumFormData.map((item, index) => {
           return (
             <div className="border p-5 rounded-lg" key={index}>
-              <div className="flex items-center gap-5">
+              <div className="flex flex-col lg:flex-row items-center gap-5">
                 <p>Lecture {index + 1}</p>
                 <Input
                   type="text"
                   placeholder="Enter Lecture Title"
                   name={`title[${index}]`}
-                  className="w-[300px]"
+                  className="lg:w-[300px]"
                   onChange={(e) => handleTitleChange(e, index)}
                   value={courseCurriculumFormData[index].title}
                 />

@@ -62,7 +62,7 @@ export function CourseOverview({ courseData }) {
 
   return (
     <Card>
-      <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row">
+      <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row ">
         <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
           <CardTitle>Course Performance Overview</CardTitle>
           <CardDescription>
@@ -86,77 +86,89 @@ export function CourseOverview({ courseData }) {
           </div>
         </div>
       </CardHeader>
-      <CardContent className="px-2 sm:p-6 ">
-        <ChartContainer
-          config={chartConfig} // Add this line
-          className="aspect-auto h-[350px] w-full"
-        >
-          <BarChart
-            data={safeCourseData}
-            margin={{
-              left: 20,
-              right: 20,
-            }}
+      <CardContent className="px-2 sm:p-6">
+        <div className="overflow-x-auto">
+          <ChartContainer
+            config={chartConfig} // Add this line
+            className="aspect-auto min-w-[500px] h-[350px] w-full "
           >
-            <CartesianGrid vertical={false} />
-            <XAxis
-              dataKey="courseTitle"
-              tickLine={false}
-              axisLine={false}
-              tickMargin={8}
-              interval="preserveStartEnd"
-            />
-            <YAxis
-              yAxisId="students"
-              label={{ value: "Students", angle: -90, position: "insideLeft" }}
-              tickFormatter={(value) => value.toLocaleString()}
-            />
-            <YAxis
-              yAxisId="revenue"
-              orientation="right"
-              label={{
-                value: "Revenue ($)",
-                angle: 90,
-                position: "insideRight",
+            <BarChart
+              data={safeCourseData}
+              margin={{
+                left: 20,
+                right: 20,
               }}
-              tickFormatter={(value) => `$${value.toLocaleString()}`}
-            />
-            <Tooltip
-              content={({ payload, label, active }) => {
-                if (active && payload && payload.length) {
-                  return (
-                    <div className="bg-white p-4 border rounded shadow-lg">
-                      <p className="font-bold">{label}</p>
-                      {payload.map((entry) => (
-                        <p key={entry.dataKey} style={{ color: entry.color }}>
-                          {entry.dataKey === "students"
-                            ? `Students: ${entry.value.toLocaleString()}`
-                            : `Revenue: $${entry.value.toLocaleString()}`} 
-                        </p>
-                      ))}
-                    </div>
-                  );
-                }
-                return null;
-              }}
-            />
-            <Bar
-              dataKey="students"
-              yAxisId="students"
-              fill="#2d8112"
-              barSize={20}
-            />
-            <Bar
-              dataKey="revenue"
-              yAxisId="revenue"
-              fill="#740f86"
-              barSize={20}
-            />
-          </BarChart>
-        </ChartContainer>
+            >
+              <CartesianGrid vertical={false} />
+              <XAxis
+                dataKey="courseTitle"
+                tickLine={false}
+                axisLine={false}
+                tickMargin={8}
+                interval="preserveStartEnd"
+              />
+              <YAxis
+                yAxisId="students"
+                label={{
+                  value: "Students",
+                  angle: -90,
+                  position: "insideLeft",
+                }}
+                tickFormatter={(value) => value.toLocaleString()}
+              />
+              <YAxis
+                yAxisId="revenue"
+                orientation="right"
+                label={{
+                  value: "Revenue ($)",
+                  angle: 90,
+                  position: "insideRight",
+                }}
+                tickFormatter={(value) => `$${value.toLocaleString()}`}
+              />
+              <Tooltip
+                content={({ payload, label, active }) => {
+                  if (active && payload && payload.length) {
+                    return (
+                      <div className="bg-white p-4 border rounded shadow-lg">
+                        <p className="font-bold">{label}</p>
+                        {payload.map((entry) => (
+                          <p key={entry.dataKey} style={{ color: entry.color }}>
+                            {entry.dataKey === "students"
+                              ? `Students: ${entry.value.toLocaleString()}`
+                              : `Revenue: $${entry.value.toLocaleString()}`}
+                          </p>
+                        ))}
+                      </div>
+                    );
+                  }
+                  return null;
+                }}
+              />
+              <Bar
+                dataKey="students"
+                yAxisId="students"
+                fill="#2d8112"
+                barSize={20}
+              />
+              <Bar
+                dataKey="revenue"
+                yAxisId="revenue"
+                fill="#740f86"
+                barSize={20}
+              />
+            </BarChart>
+          </ChartContainer>
+        </div>
       </CardContent>
     </Card>
   );
 }
 
 export default CourseOverview;
+
+
+
+
+
+

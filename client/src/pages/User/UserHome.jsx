@@ -226,7 +226,7 @@ const UserHome = () => {
           At E-learning, we are committed to empowering learners worldwide with
           high-quality, expert-led courses tailored to help you achieve your
           personal and professional goals. Whether you're a beginner exploring a
-          // new skill, a professional aiming to advance your career, or a
+          new skill, a professional aiming to advance your career, or a
           lifelong learner pursuing your passions, we have something for
           everyone. Our platform offers a diverse range of courses in
           technology, business, creative arts, and more, ensuring that you find
@@ -325,12 +325,12 @@ const UserHome = () => {
 
       {/* Features Section */}
       <div className="w-full flex flex-col gap-10 items-center my-10 relative px-5">
-        <div className="absolute w-24 h-24 md:w-36 md:h-36 rounded-full bg-yellow-700 top-[300px] right-[300px] blur-3xl"></div>
+        <div className="absolute w-24 h-24 md:w-36 md:h-36 rounded-full bg-yellow-700 top-[20px] right-[650px] blur-3xl"></div>
         <div className="absolute w-24 h-24 md:w-36 md:h-36 rounded-full bg-green-500 bottom-0 -right-12 blur-3xl"></div>
         {contents?.map((item, index) => (
           <div
             key={index}
-            className="w-full flex flex-col md:flex-row justify-center md:justify-evenly items-center gap-10 md:gap-20"
+            className="w-full flex flex-col md:flex-row justify-center md:justify-evenly items-center gap-10 md:gap-20 z-30"
           >
             <div className="w-full md:w-1/2">
               <img
@@ -339,11 +339,11 @@ const UserHome = () => {
               />
             </div>
 
-            <div className="w-full md:w-1/2 text-center md:text-left px-5">
+            <div className="w-full md:w-1/2 text-center md:text-left px-5 z-30">
               <h1 className="text-2xl md:text-4xl font-bold text-violet-600 tracking-wider my-5 ">
                 {item.title}
               </h1>
-              <p className="text-gray-300 text-justify">{item.description}</p>
+              <p className="text-gray-300 text-justify text-[12px] lg:text-base">{item.description}</p>
             </div>
           </div>
         ))}

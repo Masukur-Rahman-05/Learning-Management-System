@@ -39,7 +39,7 @@ const AdminDashboard = () => {
   return (
     <div className="flex flex-col items-center gap-10 mt-10 w-full p-10">
       <div>
-        <h1 className="text-3xl font-bold">Instructor Dashboard</h1>
+        <h1 className="text-3xl font-bold text-center text-wrap">Instructor Dashboard</h1>
       </div>
       <div className="flex flex-wrap justify-center  gap-10 w-full ">
         <div className="mt-6">

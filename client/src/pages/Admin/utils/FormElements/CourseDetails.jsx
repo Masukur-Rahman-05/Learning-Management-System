@@ -36,12 +36,12 @@ const CourseDetails = ({ setCourseDetailsData, initialData }) => {
   return (
     <div>
       <div>
-        <h1 className="text-xl font-bold">Provide course details</h1>
+        <h1 className="text-lg lg:text-2xl font-bold">
+          Provide course details
+        </h1>
       </div>
 
       <div>
-        
-
         <form className="space-y-3" onSubmit={handleCourseDetailsSubmit}>
           <div>
             <Label>Course Title</Label>

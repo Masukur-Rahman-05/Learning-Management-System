@@ -25,14 +25,14 @@ const UserContact = () => {
   };
   return (
     <div className="w-screen h-screen flex flex-col gap-5  text-white">
-      <h1 className="mx-auto text-3xl font-bold mt-[4%] text-green-500">
+      <h1 className="mx-16 lg:mx-auto text-lg md:text-xl lg:text-3xl font-bold mt-[4%] text-green-500 text-center">
         If You have any Query or Problem Please Contact Us
       </h1>
 
       <form
         ref={form}
         onSubmit={sendEmail}
-        className="w-[50%] mx-auto my-[3%] space-y-8"
+        className="w-full lg:w-[50%] px-10 lg:mx-auto my-[3%] space-y-8"
       >
         <div className="space-y-2">
           <Label>Name</Label>

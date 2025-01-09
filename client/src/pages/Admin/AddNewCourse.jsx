@@ -154,7 +154,7 @@ const AddNewCourse = () => {
 
     return (
       <div className="flex flex-col gap-4 mt-10 w-full p-10">
-        <div className="w-full flex justify-between items-center">
+        <div className="w-full flex flex-col lg:flex-row justify-between items-center gap-5">
           <div>
             <h1 className="text-2xl font-bold">Add New Course</h1>
             <p className="text-red-500 text-sm ">
@@ -165,8 +165,8 @@ const AddNewCourse = () => {
             Submit
           </Button>
         </div>
-        <Tabs defaultValue="curriculum" className="w-full">
-          <TabsList className="grid  grid-cols-3 w-[500px]">
+        <Tabs defaultValue="curriculum" className="w-full overflow-x-auto">
+          <TabsList className="grid  grid-cols-3 min-w-[500px] ">
             <TabsTrigger value="curriculum">Curriculum</TabsTrigger>
             <TabsTrigger value="courseDetails">Course Details</TabsTrigger>
             <TabsTrigger value="courseThumbnail">Course Thumbnail</TabsTrigger>
