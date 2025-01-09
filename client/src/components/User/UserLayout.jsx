@@ -12,6 +12,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import UserFooter from "./UserFooter.jsx";
 
 const UserLayout = () => {
   const dispatch = useDispatch();
@@ -101,6 +102,10 @@ const UserLayout = () => {
 
       <div className="flex flex-col items-center">
         <Outlet />
+      </div>
+
+      <div className="w-full">
+        <UserFooter/>
       </div>
     </div>
   );
