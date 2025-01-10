@@ -26,9 +26,24 @@ const App = () => {
   useEffect(() => {
     dispatch(checkAuth())
   },[dispatch])
+
+   const RootComponent = () => {
+     if (isLoading) {
+       return <div>Loading...</div>; // Optional: Add a loading state
+     }
+
+     if (isAuthenticated) {
+       return (
+         <Navigate to={user?.role === "admin" ? "/admin" : "/home"} replace />
+       );
+     }
+
+     return <Navigate to="/auth" replace />;
+   };
   return (
     <div className="overflow-x-hidden ">
       <Routes>
+        <Route path="/" element={<RootComponent />} />
         <Route
           path="/"
           element={
