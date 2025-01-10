@@ -55,3 +55,45 @@ export default defineConfig({
     },
   },
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// {
+//   "version": 2,
+//   "builds": [
+//     {
+//       "src": "client/package.json",
+//       "use": "@vercel/static-build",
+//       "config": {
+//         "distDir": "build"
+//       }
+//     }
+//   ],
+//   "routes": [
+//     {
+//       "src": "/(.*)",
+//       "dest": "/index.html"
+//     }
+//   ]
+// }
