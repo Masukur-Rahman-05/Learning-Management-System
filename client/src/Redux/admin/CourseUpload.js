@@ -1,6 +1,7 @@
 import axios from "axios";
-
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+
+const URL = import.meta.env.VITE_BASE_URL;
 
 const initialState = {
   courseData: null,
@@ -13,7 +14,7 @@ export const UploadCourseFile = createAsyncThunk(
   async (formData, { rejectWithValue, dispatch }) => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/admin/courses/upload",
+        `${URL}/api/admin/courses/upload`,
         formData,
         {
           headers: {
@@ -43,7 +44,7 @@ export const UploadBulkFiles = createAsyncThunk(
   async (formData, { rejectWithValue, dispatch }) => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/admin/courses/bulk-upload",
+        `${URL}/api/admin/courses/bulk-upload`,
         formData,
         {
           headers: {
@@ -73,7 +74,7 @@ export const DeleteCourseFile = createAsyncThunk(
   async (id, { rejectWithValue }) => {
     try {
       const response = await axios.delete(
-        `http://localhost:3000/api/admin/courses/delete/${id}`
+        `${URL}/api/admin/courses/delete/${id}`
       );
       console.log(response);
       return response.data;

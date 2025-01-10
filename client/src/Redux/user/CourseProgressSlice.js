@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-
 import axios from "axios";
+
+const URL = import.meta.env.VITE_BASE_URL;
 
 
 const initialState = {
@@ -15,7 +16,7 @@ export const getCourseProgress = createAsyncThunk(
   async ({ courseId, userId }, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `http://localhost:3000/api/user/courses/progress/get/${courseId}/${userId}`
+        `${URL}/api/user/courses/progress/get/${courseId}/${userId}`
       );
 
       console.log(response.data);
@@ -35,10 +36,8 @@ export const markCourseProgress = createAsyncThunk(
   async ({ userId, courseId, lectureId }, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        `http://localhost:3000/api/user/courses/progress/mark-progress`,
-        {userId,
-        courseId,
-        lectureId}
+        `${URL}/api/user/courses/progress/mark-progress`,
+        { userId, courseId, lectureId }
       );
 
       console.log(response.data);
@@ -58,9 +57,8 @@ export const resetCourseProgress = createAsyncThunk(
   async ({ courseId, userId }, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        `http://localhost:3000/api/user/courses/progress/reset-progress`,
-        {courseId,
-        userId}
+        `${URL}/api/user/courses/progress/reset-progress`,
+        { courseId, userId }
       );
 
       console.log(response.data);

@@ -9,6 +9,8 @@ import UserRouter from './routes/user/UserRouter.js'
 import UserPaymentRouter from './routes/user/OrderRoutes.js'
 import PaidCourseRouter from './routes/user/PaidCourseRoutes.js'
 import CourseProgressRouter from './routes/user/CourseProgressRoutes.js'
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 
@@ -17,7 +19,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: process.env.CLIENT_URL,
     // origin: "https://ace4-2404-1c40-166-390-5c70-291e-d8d4-d3f3.ngrok-free.app",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true, // Allow cookies and auth tokens

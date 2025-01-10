@@ -1,6 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+
+const URL = import.meta.env.VITE_BASE_URL;
+
 const initialState = {
   isLoading: false,
   userPaidCourseData: [],
@@ -12,7 +15,7 @@ export const getAllPaidCourses = createAsyncThunk(
   async ({ id }, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `http://localhost:3000/api/user/courses/paid/get-courses/${id}`,
+        `${URL}/api/user/courses/paid/get-courses/${id}`,
         
       );
 

@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-
 import axios from "axios";
+
+const URL = import.meta.env.VITE_BASE_URL;
 
 const initialState = {
   orderInfo: {},
@@ -13,7 +14,7 @@ export const createOrder = createAsyncThunk(
   async ({ paymentData }, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-          `http://localhost:3000/api/user/courses/order/create`,
+          `${URL}/api/user/courses/order/create`,
           paymentData
       );
 
@@ -30,7 +31,7 @@ export const CapturePayment = createAsyncThunk(
   async (data, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        `http://localhost:3000/api/user/courses/order/capture`,
+        `${URL}/api/user/courses/order/capture`,
         data
       );
 

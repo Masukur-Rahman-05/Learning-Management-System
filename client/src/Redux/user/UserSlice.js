@@ -1,6 +1,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-
 import axios from "axios";
+
+const URL = import.meta.env.VITE_BASE_URL;
+
 
 const initialState = {
   userCourseData: [],
@@ -16,7 +18,7 @@ export const getAllCourses = createAsyncThunk(
         const query = new URLSearchParams({...filter})
     try {
       const response = await axios.get(
-        `http://localhost:3000/api/user/courses/get?${query}`
+        `${URL}/api/user/courses/get?${query}`
       );
 
       return response.data;
@@ -32,7 +34,7 @@ export const getCourseDetails = createAsyncThunk(
   async ({ id,userId }, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `http://localhost:3000/api/user/courses/get/${id}/${userId}`
+        `${URL}/api/user/courses/get/${id}/${userId}`
       );
 
       console.log(response.data);

@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-
 import axios from "axios";
+
+const URL=import.meta.env.VITE_BASE_URL
 
 const initialState = {
   courseData: [],
@@ -14,7 +15,7 @@ export const addCourse = createAsyncThunk(
   async (data, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/admin/courses/add",
+        `${URL}/api/admin/courses/add`,
         data
       );
 
@@ -30,9 +31,7 @@ export const getAllCourses = createAsyncThunk(
   "adminCourseSlice/getAllCourses",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.get(
-        "http://localhost:3000/api/admin/courses/get"
-      );
+      const response = await axios.get(`${URL}/api/admin/courses/get`);
 
       return response.data;
     } catch (error) {
@@ -46,9 +45,7 @@ export const getCourseDetails = createAsyncThunk(
   "adminCourseSlice/getCourseDetails",
   async ({ id }, { rejectWithValue }) => {
     try {
-      const response = await axios.get(
-        `http://localhost:3000/api/admin/courses/get/${id}`
-      );
+      const response = await axios.get(`${URL}/api/admin/courses/get/${id}`);
 
       console.log(response.data);
       return response.data;
@@ -65,7 +62,7 @@ export const updateCourse = createAsyncThunk(
   async ({ data, id }, { rejectWithValue }) => {
     try {
       const response = await axios.put(
-        `http://localhost:3000/api/admin/courses/update/${id}`,
+        `${URL}/api/admin/courses/update/${id}`,
         data
       );
 
@@ -83,10 +80,7 @@ export const getTotalRevenueAndStudents = createAsyncThunk(
   "adminCourseSlice/getTotalRevenueAndStudents",
   async (_,{ rejectWithValue }) => {
     try {
-      const response = await axios.get(
-        `http://localhost:3000/api/admin/courses/total-state`,
-        
-      );
+      const response = await axios.get(`${URL}/api/admin/courses/total-state`);
 
       console.log(response.data);
       return response.data;
