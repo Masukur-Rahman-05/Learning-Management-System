@@ -35,6 +35,10 @@ app.use("/api/user/courses/order", UserPaymentRouter);
 app.use('/api/user/courses/paid', PaidCourseRouter)
 app.use('/api/user/courses/progress', CourseProgressRouter)
 
+app.get('/', async (req, res) => {
+  res.send("Backend is running well")
+})
+
 app.get("*", (req, res) => {
   res.send("Invalid URL, please try again");
 });
