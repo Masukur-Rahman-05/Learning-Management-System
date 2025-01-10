@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import TotalRevenue from "./utils/DashboardCharts/TotalRevenue.jsx";
 import TotalStudents from "./utils/DashboardCharts/TotalStudents.jsx";
 import TotalCourses from "./utils/DashboardCharts/TotalCourses.jsx";
-import CourseOverview from "./utils/DashboardCharts/CourseOverView.jsx";
+import CourseOverview from "./utils/DashboardCharts/CourseOverview.jsx";
 
 const AdminDashboard = () => {
   const dispatch = useDispatch();
