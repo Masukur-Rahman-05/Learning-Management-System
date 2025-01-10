@@ -5,20 +5,66 @@
       "src": "client/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist"
+        "distDir": "build"
       }
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/",
       "dest": "/index.html"
-    }
-  ],
-  "rewrites": [
+    },
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "/auth",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/auth/*",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/admin",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/admin/*",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/home",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/home/*",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/courses",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/courses/*",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/courses/:id",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/contact",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/my-courses",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/course-progress/:id",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/payment-return",
+      "dest": "/index.html"
     }
   ]
 }
