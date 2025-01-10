@@ -283,7 +283,7 @@ const UserCourseDetails = () => {
       );
 
       if (result?.payload?.success && result?.payload?.isCoursePurchased) {
-        navigate(`/home/course-progress/${result?.payload?.courseId}`);
+        navigate(`/course-progress/${result?.payload?.courseId}`);
       }
       console.log(result.payload);
     };

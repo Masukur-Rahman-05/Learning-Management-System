@@ -12,7 +12,7 @@ const RouteGuard = ({ isAuthenticated, user, children }) => {
     if (user?.role === "instructor") {
       return <Navigate to="/admin" />;
     } else {
-      return <Navigate to="/home" />;
+      return <Navigate to="/" />;
     }
   }
 
@@ -21,13 +21,13 @@ const RouteGuard = ({ isAuthenticated, user, children }) => {
     user?.role !== "instructor" &&
     location.pathname.includes("/admin")
   ) {
-    return <Navigate to="/home" />;
+    return <Navigate to="/" />;
   }
 
   if (
     isAuthenticated &&
     user?.role === "instructor" &&
-    location.pathname.includes("/home")
+    location.pathname.includes("/")
   ) {
     return <Navigate to="/admin" />;
   }

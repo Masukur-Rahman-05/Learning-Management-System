@@ -37,24 +37,24 @@ const UserLayout = () => {
         <div className="flex items-center gap-5">
           {/* Navigation links: Hidden on small/medium screens */}
           <div className="hidden lg:flex items-center gap-5 font-semibold text-white">
-            <p className="cursor-pointer" onClick={() => navigate("/home")}>
+            <p className="cursor-pointer" onClick={() => navigate("/")}>
               Home
             </p>
             <p
               className="cursor-pointer"
-              onClick={() => navigate("/home/courses")}
+              onClick={() => navigate("/courses")}
             >
               Courses
             </p>
             <p
               className="cursor-pointer"
-              onClick={() => navigate("/home/contact")}
+              onClick={() => navigate("/contact")}
             >
               Contact
             </p>
             <p
               className="cursor-pointer"
-              onClick={() => navigate("/home/my-courses")}
+              onClick={() => navigate("/my-courses")}
             >
               My-Courses
             </p>
@@ -77,16 +77,16 @@ const UserLayout = () => {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-24 bg-black/20 backdrop-blur-[10px] border-none text-white mr-5 space-y-3 ">
-                <DropdownMenuItem onClick={() => navigate("/home")}>
+                <DropdownMenuItem onClick={() => navigate("/")}>
                   Home
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => navigate("/home/courses")}>
+                <DropdownMenuItem onClick={() => navigate("/courses")}>
                   Courses
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => navigate("/home/contact")}>
+                <DropdownMenuItem onClick={() => navigate("/contact")}>
                   Contact
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => navigate("/home/my-courses")}>
+                <DropdownMenuItem onClick={() => navigate("/my-courses")}>
                   My-Courses
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={handleLogout}>

@@ -157,7 +157,7 @@ const UserCourses = () => {
             sortedCourseList.map((item, index) => (
               <div
                 key={index}
-                onClick={() => navigate(`/home/courses/${item._id}`)}
+                onClick={() => navigate(`/courses/${item._id}`)}
                 className="w-full flex flex-col  lg:flex-row items-start lg:items-center gap-5 border-[1px] border-slate-700 rounded-xl p-5 text-white cursor-pointer  "
               >
                 <div className="w-full sm:w-full lg:w-[310px] flex-shrink-0">

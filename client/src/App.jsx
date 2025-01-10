@@ -100,7 +100,7 @@
 
 
 import React, { useEffect } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import AuthPage from "./components/Auth/AuthPage";
 import LoginRegistration from "./pages/Auth/LoginRegistration";
 import AdminLayout from "./components/Admin/AdminLayout.jsx";
@@ -129,29 +129,10 @@ const App = () => {
     dispatch(checkAuth());
   }, [dispatch]);
 
-  const RootRedirect = () => {
-    if (isLoading) {
-      return <div>Loading...</div>; // Optional loading state
-    }
-
-    if (isAuthenticated) {
-      return user?.role === "admin" ? (
-        <Navigate to="/admin" replace />
-      ) : (
-        <Navigate to="/home" replace />
-      );
-    }
-
-    return <Navigate to="/auth" replace />;
-  };
-
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden ">
       <Routes>
-        {/* Default Root Route */}
-        <Route path="/" element={<RootRedirect />} />
-
-        {/* Auth Routes */}
+        
         <Route
           path="/auth"
           element={
@@ -163,7 +144,6 @@ const App = () => {
           <Route index element={<LoginRegistration />} />
         </Route>
 
-        {/* Admin Routes */}
         <Route
           path="/admin"
           element={
@@ -178,9 +158,8 @@ const App = () => {
           <Route path="add-new-course" element={<AddNewCourse />} />
         </Route>
 
-        {/* User Routes */}
         <Route
-          path="/home"
+          path="/"
           element={
             <RouteGuard isAuthenticated={isAuthenticated} user={user}>
               <UserLayout />
@@ -194,8 +173,6 @@ const App = () => {
           <Route path="my-courses" element={<UserMyCourses />} />
           <Route path="course-progress/:id" element={<UserCourseProgress />} />
         </Route>
-
-        {/* Payment Return */}
         <Route path="payment-return" element={<PaypalPaymentReturn />} />
       </Routes>
     </div>
