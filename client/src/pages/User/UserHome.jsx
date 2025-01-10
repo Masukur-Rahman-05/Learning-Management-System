@@ -199,6 +199,7 @@ import HomeCategory from "./HomeUtils.js/HomeCategory.jsx";
 import HomeInstructor from "./HomeUtils.js/HomeInstructors.jsx";
 import { contents } from "./HomeUtils.js/HomeElements.js";
 import { useNavigate } from "react-router-dom";
+import UserFAQ from "./UserFAQ.jsx";
 
 const UserHome = () => {
   const banners = [bannerOne, bannerTwo, bannerThree, bannerFour];
@@ -355,6 +356,11 @@ const UserHome = () => {
           OUR INSTRUCTORS
         </h1>
         <HomeInstructor />
+      </div>
+
+
+      <div>
+        <UserFAQ/>
       </div>
     </div>
   );
