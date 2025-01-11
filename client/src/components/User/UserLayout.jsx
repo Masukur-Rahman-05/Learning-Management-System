@@ -68,7 +68,7 @@ const UserLayout = () => {
                   <CiMenuFries />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-24 bg-black/25 filter backdrop-blur-lg lg:backdrop-blur-[10px] border-none text-white mr-5 space-y-3 ">
+              <DropdownMenuContent className="w-24 bg-black/5  backdrop-blur-lg lg:backdrop-blur-[10px] border-none text-white mr-5 space-y-3 ">
                 <DropdownMenuItem onClick={() => navigate("/")}>
                   Home
                 </DropdownMenuItem>
