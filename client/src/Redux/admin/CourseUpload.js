@@ -16,7 +16,10 @@ export const UploadCourseFile = createAsyncThunk(
       const response = await axios.post(
         `${URL}/api/admin/courses/upload`,
         formData,
+        
+        
         {
+          withCredentials: true, 
           headers: {
             "Content-Type": "multipart/form-data", // Required for file uploads
           },
@@ -46,7 +49,10 @@ export const UploadBulkFiles = createAsyncThunk(
       const response = await axios.post(
         `${URL}/api/admin/courses/bulk-upload`,
         formData,
+        
+        
         {
+          withCredentials: true,
           headers: {
             "Content-Type": "multipart/form-data", // Required for file uploads
           },
@@ -74,7 +80,10 @@ export const DeleteCourseFile = createAsyncThunk(
   async (id, { rejectWithValue }) => {
     try {
       const response = await axios.delete(
-        `${URL}/api/admin/courses/delete/${id}`
+        `${URL}/api/admin/courses/delete/${id}`,
+        {
+          withCredentials: true,
+        }
       );
       console.log(response);
       return response.data;

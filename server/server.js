@@ -20,11 +20,14 @@ const corsConfig = {
   credentials: true, // Allow cookies and auth tokens
   allowedHeaders: [
     "Content-Type",
+    "Cache-Control",
     "Authorization",
     "X-Requested-With",
     "Accept",
     "Origin",
     "Access-Control-Allow-Origin",
+    "Access-Control-Allow-Credentials",
+    "Access-Control-Allow-Methods",
   ],
 };
   
