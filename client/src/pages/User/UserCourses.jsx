@@ -169,7 +169,7 @@ const UserCourses = () => {
                 </div>
                 <div className="w-full lg:min-w-0">
                   <h3 className="text-xl flex flex-col lg:flex-row items-start lg:items-center justify-between font-bold tracking-wide my-5 text-wrap overflow-hidden">
-                    <span className="truncate text-wrap">
+                    <span className="break-words max-w-full">
                       {item.courseTitle || "Untitled Course"}
                     </span>
                     <p className="text-sm text-slate-500 mt-2 lg:mt-0 whitespace-nowrap text-wrap">
