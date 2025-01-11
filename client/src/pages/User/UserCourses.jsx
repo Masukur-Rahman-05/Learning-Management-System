@@ -108,7 +108,7 @@ const UserCourses = () => {
           <DropdownMenuTrigger className="bg-stone-900 backdrop-blur-[10px] text-white py-2 px-4  text-sm font-medium">
             Filter
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-[300px] h-[400px] bg-black/20 backdrop-blur-[50px] lg:backdrop-blur-[10px] text-white p-4 rounded-lg border border-gray-700 overflow-y-auto">
+          <DropdownMenuContent className="w-[300px] h-[400px] bg-black/20 backdrop-blur-lg lg:backdrop-blur-[10px] text-white p-4 rounded-lg border border-gray-700 overflow-y-auto">
             <CourseFilters filter={filter} handleFilter={handleFilter} />
           </DropdownMenuContent>
         </DropdownMenu>
@@ -127,7 +127,7 @@ const UserCourses = () => {
               <BiSort />
               Sort by
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="bg-black/20 backdrop-blur-[50px] lg:backdrop-blur-[10px] text-white border-slate-700">
+            <DropdownMenuContent className="bg-black/20 backdrop-blur-lg lg:backdrop-blur-[10px] text-white border-slate-700">
               <DropdownMenuItem onClick={() => handleSort("lowtohigh")}>
                 <BsSortUp /> Low to High
               </DropdownMenuItem>
