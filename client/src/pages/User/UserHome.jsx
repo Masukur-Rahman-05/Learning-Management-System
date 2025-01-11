@@ -241,7 +241,7 @@ const UserHome = () => {
 
         <Button
           className="flex items-center gap-2 w-44 md:w-1/4 text-sm md:text-md p-2 md:p-8 bg-violet-950"
-          onClick={() => navigate("/home/courses")}
+          onClick={() => navigate("/courses")}
         >
           EXPLORE COURSES <HiArrowLongRight />
         </Button>
