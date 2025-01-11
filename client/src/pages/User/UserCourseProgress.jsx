@@ -160,7 +160,7 @@ const UserCourseProgress = () => {
   // If no course details or no lecture video, show loading
   if (!courseDetails || !lectureVideo) {
     return (
-      <div className="w-screen h-[700px] bg-black flex items-center justify-center ">
+      <div className="w-screen h-[700px] bg-slate-950 flex items-center justify-center ">
         <PulseLoader size={13} color="#c026dc" speedMultiplier={0.7} />
       </div>
     );
