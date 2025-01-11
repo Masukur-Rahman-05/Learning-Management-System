@@ -7,7 +7,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "echo 'No build step needed'",
+    "vercel-build": "echo 'No build step needed'"
   },
   "author": "",
   "license": "ISC",
