@@ -14,18 +14,21 @@ dotenv.config();
 
 const app = express();
 
-app.use(cookieParser());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(
-  cors({
+const corsConfig = {
     origin: process.env.CLIENT_URL,
     // origin: "https://ace4-2404-1c40-166-390-5c70-291e-d8d4-d3f3.ngrok-free.app",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true, // Allow cookies and auth tokens
     allowedHeaders: "Content-Type,Authorization,Cache-Control",
-  })
-);
+}
+  
+app.use(cors(corsConfig));
+app.options("", cors(corsConfig));
+
+app.use(cookieParser());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 
 (() => {
   try {
