@@ -23,9 +23,7 @@ const UserLayout = () => {
   };
 
   return (
-    <div
-      className="w-screen min-h-screen flex flex-col bg-slate-950"
-    >
+    <div className="w-screen min-h-screen flex flex-col bg-slate-950">
       <div className="bg-none w-full h-[80px] p-5 flex items-center justify-between">
         <div
           className="flex items-center gap-2 font-extrabold sm:text-lg md:text-xl lg:text-2xl text-violet-400 cursor-pointer"
@@ -40,16 +38,10 @@ const UserLayout = () => {
             <p className="cursor-pointer" onClick={() => navigate("/")}>
               Home
             </p>
-            <p
-              className="cursor-pointer"
-              onClick={() => navigate("/courses")}
-            >
+            <p className="cursor-pointer" onClick={() => navigate("/courses")}>
               Courses
             </p>
-            <p
-              className="cursor-pointer"
-              onClick={() => navigate("/contact")}
-            >
+            <p className="cursor-pointer" onClick={() => navigate("/contact")}>
               Contact
             </p>
             <p
@@ -76,7 +68,7 @@ const UserLayout = () => {
                   <CiMenuFries />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-24 bg-black/20 backdrop-blur-[10px] border-none text-white mr-5 space-y-3 ">
+              <DropdownMenuContent className="w-24 bg-black/20 backdrop-blur-[50px] lg:backdrop-blur-[10px] border-none text-white mr-5 space-y-3 ">
                 <DropdownMenuItem onClick={() => navigate("/")}>
                   Home
                 </DropdownMenuItem>
@@ -105,7 +97,7 @@ const UserLayout = () => {
       </div>
 
       <div className="w-full">
-        <UserFooter/>
+        <UserFooter />
       </div>
     </div>
   );
