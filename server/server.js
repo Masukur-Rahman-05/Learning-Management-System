@@ -27,6 +27,16 @@ app.use(
   })
 );
 
+(async () => {
+  try {
+    await connectDB();
+    console.log("Database connected");
+  } catch (error) {
+    console.error("Database connection error:", error.message);
+    process.exit(1);
+  }
+})();
+
 app.use('/api/auth',userRouter)
 app.use("/api/admin/courses", UploadRouter);
 app.use("/api/admin/courses", AdminCourseRouter);
@@ -45,9 +55,11 @@ app.get("*", (req, res) => {
 
 app.listen(3000, async () => {
   try {
-    await connectDB();
     console.log("Server started");
   } catch (error) {
     console.log(error.message);
   }
 });
+
+
+export default app
