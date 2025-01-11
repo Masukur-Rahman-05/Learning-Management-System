@@ -168,7 +168,7 @@ const UserCourses = () => {
                   />
                 </div>
                 <div className="w-full lg:min-w-0">
-                  <h3 className="text-xl flex flex-col lg:flex-row items-start lg:items-center justify-between font-bold tracking-wide my-5 ">
+                  <h3 className="text-xl flex flex-col lg:flex-row items-start lg:items-center justify-between font-bold tracking-wide my-5 text-wrap overflow-hidden">
                     <span className="truncate text-wrap">
                       {item.courseTitle || "Untitled Course"}
                     </span>

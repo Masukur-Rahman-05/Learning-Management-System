@@ -29,7 +29,7 @@ const UserLayout = () => {
       <div className="bg-none w-full h-[80px] p-5 flex items-center justify-between">
         <div
           className="flex items-center gap-2 font-extrabold sm:text-lg md:text-xl lg:text-2xl text-violet-400 cursor-pointer"
-          onClick={() => navigate("/home")}
+          onClick={() => navigate("/")}
         >
           <BsBookHalf />
           <h1>E-Learning</h1>
