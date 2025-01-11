@@ -30,7 +30,7 @@ const corsConfig = {
 };
   
 app.use(cors(corsConfig));
-app.options("*", cors(corsConfig));
+app.options("", cors(corsConfig));
 
 app.use(cookieParser());
 app.use(express.json());
