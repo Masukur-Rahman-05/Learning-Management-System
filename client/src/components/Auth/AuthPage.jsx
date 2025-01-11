@@ -4,7 +4,7 @@ import { BsBookHalf } from "react-icons/bs";
 
 const AuthPage = () => {
   return (
-    <div className="w-screen min-h-screen flex flex-col items-center bg-slate-900 text-white">
+    <div className="w-screen min-h-screen flex flex-col items-center bg-slate-950 text-white">
       <div className="w-screen p-5 flex items-center">
         <div className="flex items-center gap-2 font-extrabold text-2xl">
           <BsBookHalf />

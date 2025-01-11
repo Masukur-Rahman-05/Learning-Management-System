@@ -18,7 +18,6 @@
 // import UserMyCourses from "./pages/User/UserMyCourses.jsx";
 // import UserCourseProgress from "./pages/User/UserCourseProgress.jsx";
 
-
 // const App = () => {
 //   const { isAuthenticated, user, isLoading } = useSelector((state) => state.auth)
 //   const dispatch = useDispatch();
@@ -27,11 +26,10 @@
 //     dispatch(checkAuth())
 //   },[dispatch])
 
-  
 //   return (
 //     <div className="overflow-x-hidden ">
 //       <Routes>
-        
+
 //         <Route
 //           path="/"
 //           element={
@@ -94,11 +92,6 @@
 
 // export default App;
 
-
-
-
-
-
 import React, { useEffect } from "react";
 import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import AuthPage from "./components/Auth/AuthPage";
@@ -118,6 +111,7 @@ import UserCourseDetails from "./pages/User/UserCourseDetails.jsx";
 import PaypalPaymentReturn from "./pages/User/PaypalPaymentReturn.jsx";
 import UserMyCourses from "./pages/User/UserMyCourses.jsx";
 import UserCourseProgress from "./pages/User/UserCourseProgress.jsx";
+import { PulseLoader } from "react-spinners";
 
 const App = () => {
   const { isAuthenticated, user, isLoading } = useSelector(
@@ -129,10 +123,17 @@ const App = () => {
     dispatch(checkAuth());
   }, [dispatch]);
 
+  if (isLoading) {
+    return (
+      <div className="bg-slate-950 w-screen h-screen flex items-center justify-center">
+        <PulseLoader size={13} color="#c026dc" speedMultiplier={0.7} />
+      </div>
+    );
+  }
+
   return (
     <div className="overflow-x-hidden ">
       <Routes>
-        
         <Route
           path="/auth"
           element={
