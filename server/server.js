@@ -29,8 +29,7 @@ const corsConfig = {
     "Access-Control-Allow-Credentials",
     "Access-Control-Allow-Methods",
   ],
-  preflightContinue: false,
-  optionsSuccessStatus: 204,
+  
 };
   
 app.use(cors(corsConfig));
