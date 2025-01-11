@@ -25,9 +25,6 @@ const corsConfig = {
     "X-Requested-With",
     "Accept",
     "Origin",
-    "Access-Control-Allow-Origin",
-    "Access-Control-Allow-Credentials",
-    "Access-Control-Allow-Methods",
   ],
   
 };
