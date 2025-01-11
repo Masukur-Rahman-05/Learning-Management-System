@@ -53,13 +53,17 @@ app.get("*", (req, res) => {
   res.send("Invalid URL, please try again");
 });
 
-app.listen(3000, async () => {
-  try {
-    console.log("Server started");
-  } catch (error) {
-    console.log(error.message);
-  }
-});
+if (process.env.NODE_ENV !== "production") {
+  app.listen(3000, () => {
+    try {
+      console.log("Server is running on http://localhost:3000");
+      
+    } catch (error) {
+      console.log(error.message);
+      
+    }
+  });
+}
 
 
 export default app
