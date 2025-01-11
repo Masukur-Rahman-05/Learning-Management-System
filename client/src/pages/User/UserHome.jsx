@@ -359,7 +359,7 @@ const UserHome = () => {
       </div>
 
 
-      <div>
+      <div className="px-3 md:px-0">
         <UserFAQ/>
       </div>
     </div>

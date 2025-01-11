@@ -47,7 +47,7 @@ export default function HomeInstructor() {
         pagination={false}
               
         modules={[EffectCoverflow, Pagination, Navigation]}
-        className="w-full max-w-[1100px] h-[400px]"
+        className="w-full max-w-[1100px] h-[200px] lg:h-[400px]"
       >
         {InstructorInfo.map((item, index) => (
           <SwiperSlide
