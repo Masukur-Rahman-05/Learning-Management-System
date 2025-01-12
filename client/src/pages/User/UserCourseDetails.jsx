@@ -269,6 +269,7 @@ const UserCourseDetails = () => {
   );
 
   const { user } = useSelector((state) => state.auth);
+  const { isEnrollLoading } = useSelector((state) => state.userPaymentSlice);
 
   const freePreviewVideoUrlIndex =
     userCourseDetails?.curriculum?.findIndex((item) => item.freePreview) ?? -1;
@@ -329,6 +330,14 @@ const UserCourseDetails = () => {
 
   if (approvalUrl !== "") {
     window.location.href = approvalUrl;
+  }
+
+  if(isEnrollLoading){
+    return (
+      <div className="w-screen h-screen bg-slate-950 flex items-center justify-center">
+        <PulseLoader size={13} color="#c026dc" speedMultiplier={0.7} />
+      </div>
+    )
   }
 
   return (

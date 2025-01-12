@@ -6,7 +6,7 @@ const URL = import.meta.env.VITE_BASE_URL;
 const initialState = {
   orderInfo: {},
   paymentInfo: {},
-  isLoading: false,
+  isEnrollLoading: false,
 };
 
 export const createOrder = createAsyncThunk(
@@ -53,25 +53,25 @@ const UserSlice = createSlice({
     builder
 
       .addCase(createOrder.pending, (state) => {
-        state.isLoading = true;
+        state.isEnrollLoading = true;
       })
       .addCase(createOrder.fulfilled, (state, action) => {
-        state.isLoading = false;
+        state.isEnrollLoading = false;
         state.orderInfo = action.payload.data;
       })
       .addCase(createOrder.rejected, (state) => {
-        state.isLoading = false;
+        state.isEnrollLoading = false;
         state.orderInfo = {};
       })
       .addCase(CapturePayment.pending, (state) => {
-        state.isLoading = true;
+        state.isEnrollLoading = true;
       })
       .addCase(CapturePayment.fulfilled, (state, action) => {
-        state.isLoading = false;
+        state.isEnrollLoading = false;
         state.paymentInfo = action.payload.data;
       })
       .addCase(CapturePayment.rejected, (state) => {
-        state.isLoading = false;
+        state.isEnrollLoading = false;
         state.paymentInfo = {};
       });
   },
