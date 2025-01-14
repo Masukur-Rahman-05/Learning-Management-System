@@ -429,7 +429,7 @@ const UserCourseDetails = () => {
             {/*Right Side Div Start */}
             <div className="w-full lg:w-1/2  flex flex-col justify-center items-center  pl-0 lg:pl-24 gap-4 relative">
               <div className="absolute w-36 h-36 rounded-full bg-violet-700 bottom-0 right-0 blur-3xl  "></div>
-              <div className="w-full h-[300px] lg:ml-5 ">
+              <div className="aspect-w-16 aspect-h-9 lg:ml-5 ">
                 {freePreviewVideoUrlIndex !== -1 ? (
                   <VideoPlayer
                     url={freePreviewVideoUrl}
