@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { CapturePayment } from "@/Redux/user/UserPaymentSlice.js";
@@ -18,7 +18,7 @@ const PaypalPaymentReturn = () => {
       async function capturePayment() {
         const orderId = JSON.parse(sessionStorage.getItem("currentOrderId"));
 
-        console.log(orderId)
+        console.log(orderId);
 
         const response = await dispatch(
           CapturePayment({ paymentId, payerId, orderId })
@@ -26,7 +26,7 @@ const PaypalPaymentReturn = () => {
 
         if (response?.payload?.success) {
           sessionStorage.removeItem("currentOrderId");
-          navigate("/home/my-courses");
+          navigate("/my-courses");
         }
       }
 

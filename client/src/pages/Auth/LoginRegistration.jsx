@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import RegisterForm from './Utils/RegisterForm';
 import LoginForm from './Utils/LoginForm';

@@ -9,7 +9,6 @@
 // import { MdKeyboardArrowLeft } from "react-icons/md";
 // import { HiArrowLongRight } from "react-icons/hi2";
 
-
 // import HomeCategory from './HomeUtils.js/HomeCategory.jsx';
 // import HomeInstructor from './HomeUtils.js/HomeInstructors.jsx';
 // import { contents } from './HomeUtils.js/HomeElements.js';
@@ -27,7 +26,6 @@
 //     }, 4000);
 //     return () => clearInterval(interval);
 //   }, []);
-
 
 //   return (
 //     <div className="w-screen min-h-screen flex flex-col gap-5 ">
@@ -182,9 +180,7 @@
 
 */
 
-
-
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import bannerOne from "../../assets/Banners/bannerOne.jpg";
 import bannerTwo from "../../assets/Banners/bannerTwo.jpg";
 import bannerThree from "../../assets/Banners/bannerThree.jpg";
@@ -227,16 +223,16 @@ const UserHome = () => {
           At E-learning, we are committed to empowering learners worldwide with
           high-quality, expert-led courses tailored to help you achieve your
           personal and professional goals. Whether you're a beginner exploring a
-          new skill, a professional aiming to advance your career, or a
-          lifelong learner pursuing your passions, we have something for
-          everyone. Our platform offers a diverse range of courses in
-          technology, business, creative arts, and more, ensuring that you find
-          the perfect learning path for your needs. Join our vibrant community
-          of learners and gain access to tools that transform knowledge into
-          success. Whether you’re preparing for your next big opportunity,
-          exploring a new hobby, or looking to upskill, E-learning is here to
-          guide you every step of the way. Start your journey today with
-          E-learning and unlock endless possibilities!
+          new skill, a professional aiming to advance your career, or a lifelong
+          learner pursuing your passions, we have something for everyone. Our
+          platform offers a diverse range of courses in technology, business,
+          creative arts, and more, ensuring that you find the perfect learning
+          path for your needs. Join our vibrant community of learners and gain
+          access to tools that transform knowledge into success. Whether you’re
+          preparing for your next big opportunity, exploring a new hobby, or
+          looking to upskill, E-learning is here to guide you every step of the
+          way. Start your journey today with E-learning and unlock endless
+          possibilities!
         </p>
 
         <Button
@@ -250,7 +246,9 @@ const UserHome = () => {
       {/* Info Cards */}
       <div className="w-full flex flex-wrap justify-center gap-5 md:gap-10 my-10 px-5">
         <div className="w-72 md:w-[300px] h-auto p-5 flex flex-col items-center text-justify rounded-xl shadow-xl space-y-3 bg-slate-900 hover:scale-110 duration-700">
-          <h1 className="sm:text-lg lg:text-xl font-bold text-violet-500">Learn</h1>
+          <h1 className="sm:text-lg lg:text-xl font-bold text-violet-500">
+            Learn
+          </h1>
           <p className="text-white text-sm lg:text-base">
             Discover new skills and knowledge with our expert-led courses. Dive
             into engaging content designed to simplify complex topics and make
@@ -258,7 +256,9 @@ const UserHome = () => {
           </p>
         </div>
         <div className="w-72 md:w-[300px] h-auto p-5 flex flex-col items-center text-justify rounded-xl shadow-xl space-y-3 bg-slate-900 hover:scale-110 duration-700">
-          <h1 className="sm:text-lg lg:text-xl font-bold text-violet-500">Grow</h1>
+          <h1 className="sm:text-lg lg:text-xl font-bold text-violet-500">
+            Grow
+          </h1>
           <p className="text-white text-sm lg:text-base">
             Expand your horizons and advance your career. Gain the confidence
             and skills to tackle challenges and achieve your personal and
@@ -266,7 +266,9 @@ const UserHome = () => {
           </p>
         </div>
         <div className="w-72 md:w-[300px] h-auto p-5 flex flex-col items-center text-justify rounded-xl shadow-xl space-y-3 bg-slate-900 hover:scale-110 duration-700">
-          <h1 className="sm:text-lg lg:text-xl font-bold text-violet-500">Implement</h1>
+          <h1 className="sm:text-lg lg:text-xl font-bold text-violet-500">
+            Implement
+          </h1>
           <p className="text-white text-sm lg:text-base">
             Turn knowledge into action! Apply what you’ve learned through
             hands-on projects and practical exercises to build real-world
@@ -274,7 +276,9 @@ const UserHome = () => {
           </p>
         </div>
         <div className="w-72 md:w-[300px] h-auto p-5 flex flex-col items-center text-justify rounded-xl shadow-xl space-y-3 bg-slate-900 hover:scale-110 duration-700">
-          <h1 className="sm:text-lg lg:text-xl font-bold text-violet-500">Succeed</h1>
+          <h1 className="sm:text-lg lg:text-xl font-bold text-violet-500">
+            Succeed
+          </h1>
           <p className="text-white text-sm lg:text-base">
             Achieve your dreams with the power of knowledge. From mastering
             skills to landing opportunities, we’re here to help you thrive.
@@ -344,7 +348,9 @@ const UserHome = () => {
               <h1 className="text-2xl md:text-4xl font-bold text-violet-600 tracking-wider my-5 ">
                 {item.title}
               </h1>
-              <p className="text-gray-300 text-justify text-[12px] lg:text-base">{item.description}</p>
+              <p className="text-gray-300 text-justify text-[12px] lg:text-base">
+                {item.description}
+              </p>
             </div>
           </div>
         ))}
@@ -358,9 +364,8 @@ const UserHome = () => {
         <HomeInstructor />
       </div>
 
-
       <div className="px-3 md:px-0">
-        <UserFAQ/>
+        <UserFAQ />
       </div>
     </div>
   );

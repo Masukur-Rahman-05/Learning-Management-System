@@ -43,8 +43,6 @@ export const registerUser = async (req, res) => {
 
 //............................................................Login.................................................
 
-
-
 export const loginUser = async (req, res) => {
   const { email, password } = req.body;
   console.log(email, password);
@@ -130,17 +128,17 @@ export const AuthMiddleware = async (req, res, next) => {
   }
 };
 
-   export const logoutUser = async (req, res) => {
-     try {
-       res.clearCookie("token");
-       return res.status(200).json({
-         success: true,
-         message: "Logout Successful",
-       });
-     } catch (error) {
-       return res.status(500).json({
-         success: false,
-         message: "Logout Failed.",
-       });
-     }
-   };
+export const logoutUser = async (req, res) => {
+  try {
+    res.clearCookie("token");
+    return res.status(200).json({
+      success: true,
+      message: "Logout Successful",
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: "Logout Failed.",
+    });
+  }
+};

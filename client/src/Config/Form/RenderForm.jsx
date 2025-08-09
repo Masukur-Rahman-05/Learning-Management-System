@@ -14,7 +14,6 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 
-
 const RenderForm = ({
   formElements,
   validateOptions,
@@ -35,8 +34,6 @@ const RenderForm = ({
       terms: false,
     },
   });
-
-
 
   const handleFormSubmit = (data) => {
     onSubmit(data);
