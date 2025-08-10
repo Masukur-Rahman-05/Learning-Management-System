@@ -1,7 +1,9 @@
+import dotenv from "dotenv";
 import paypal from "../../helper/paypal.js";
 import { Order } from "../../model/user/Order.js";
 import { StudentCourses } from "../../model/user/StudentCourses.js";
 import { Course } from "../../model/admin/Course.js";
+dotenv.config();
 export const createOrder = async (req, res) => {
   try {
     const {
@@ -26,8 +28,8 @@ export const createOrder = async (req, res) => {
         payment_method: "paypal",
       },
       redirect_urls: {
-        return_url: "http://localhost:5173/payment-return",
-        cancel_url: "http://localhost:5173/payment-cancel",
+        return_url: `${process.env.CLIENT_URL}/payment-return`,
+        cancel_url: `${process.env.CLIENT_URL}/payment-cancel`,
       },
       transactions: [
         {
@@ -75,7 +77,7 @@ export const createOrder = async (req, res) => {
           coursePricing,
         });
 
-           newlyCreatedCourseOrder.save();
+        newlyCreatedCourseOrder.save();
 
         const approveUrl = paymentInfo.links.find(
           (link) => link.rel == "approval_url"
@@ -99,8 +101,6 @@ export const createOrder = async (req, res) => {
   }
 };
 
-
-
 //.................................Course PaymentAnd Finalize Order...............
 
 export const capturePaymentAndFinalizeOrder = async (req, res) => {
@@ -121,7 +121,7 @@ export const capturePaymentAndFinalizeOrder = async (req, res) => {
     order.paymentId = paymentId;
     order.payerId = payerId;
 
-    await order.save(); 
+    await order.save();
 
     //update out student course model
     const studentCourses = await StudentCourses.findOne({
@@ -178,4 +178,3 @@ export const capturePaymentAndFinalizeOrder = async (req, res) => {
     });
   }
 };
-
